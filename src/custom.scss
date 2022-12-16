@@ -1,0 +1,22 @@
+$font-family-sans-serif: "Poppins", sans-serif;
+//$navbar-toggler-icon-bg: white !important;
+
+$navbar-light-color: white;
+//$navbar-dark-color: red;
+//$bg-color: #002624;
+$body-bg: #002624;
+$body-color: white;
+$primary: limegreen;
+//$primary: #b7b51e;
+$link-color: black;
+$link-hover-color: #b7b51e;
+$border-color: $link-hover-color;
+
+$list-group-bg: #637660;
+
+$input-bg: white;
+//$input-body: black;
+$input-color: black;
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,101 @@
+@import "custom";
+
+// Common
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main__wrapper {
+    flex-grow: 1;
+    &-center {
+        justify-content: center;
+    }
+}
+
+.navbar {
+    max-width: 700px;
+    margin: 1em auto 2.5em auto;
+    &__brand {
+        &-logo {
+            max-height: 40px;
+        }
+    }
+    &__link {
+        color: white;
+        text-decoration: none;
+        margin: 0 0.7em;
+        &-login {
+            font-style: italic;
+        }
+        &.active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.hearticon {
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+// Footer
+footer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 10px;
+    margin-top: 4em;
+    border-top: 1px solid $border-color;
+    padding-top: 1em;
+    width: 100%;
+}
+
+// Detailspage
+.gamedetails {
+    &__image {
+        border-radius: 10px;
+        max-width: 100%;
+        margin-bottom: 2em;
+    }
+    &__description {
+        margin-top: 2em;
+    }
+}
+
+// Forms on both Contact and Login page
+
+.form {
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #637660 !important;
+    &-label {
+        color: black;
+    }
+    &-sendbutton {
+        margin-bottom: 1em;
+    }
+    &-requirement {
+        color: orangered;
+        font-style: italic;
+    }
+}
+
+.statusbox {
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    &-error {
+        background-color: orangered;
+        color: black;
+    }
+    &-success {
+        background-color: lightgreen;
+        color: black;
+    }
+}
