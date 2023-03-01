@@ -1,84 +1,96 @@
-# JS Frameworks Course Assignment
+# GameZ
 
-## Brief
+![image](https://tekniskpotet.no/img/gamez-screenshot.jpg)
 
-Create either a new React or Next.js app in this repo.
+A list of games retrieved from the Rawg.io API with info and description of each game.
 
-For the login functionality, use either a Wordpress installation with the <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/" target="_blank">JWT plugin from Module 3</a> installed, or a Strapi installation. Do not add either of these to your repo. Your API should remain a separate project. The markers will use their own installations when marking.
+# Table of Contents
 
-You can use either a REST or GraphQL API for the API calls.
+- [Description](#description)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
----
+## Description
 
-## Assessment
+A list of games retrieved from the Rawg.io API, with info and description of each game.
+You may mark games as favourites for easy access in the future.
 
-Please provide your login credentials for assessment.
+The front-end is also have an admin area available, where we can add additional tasks in the future.
 
-Example
-- username: xxxxxx
-- password: xxxxxx
+Here are some of the features for this project:
 
-## Level 1
+- User Authentication
+- Game-Content retrieved from Rest-API
+- Mark and save your favourites
+- Contact Schema uses SmtpJS
+- User and favourites stored in LocalStorage API
 
-Your app should have the following paths:
+## Built With
 
--   "/"
--   "/detail/:param"
--   "/contact"
--   "/login"
--   "/admin"
+This project has been built with the following stack:
 
-The admin path won't appear in your navigation.
+- [React.js](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com)
+- [Wordpress](https://www.wordpress.org)
+- [SmtpJS](https://smtpjs.com/)
 
-Use reusable components where appropriate and pay attention to how the components are arranged.
+## Getting Started
 
-### Home
+### Installing
 
-Find an API that returns at least:
+To install this front-end you can clone the repo and install it, like this:
 
--   an array of items
--   a single item retrieved by a parameter (id, name, slug, etc)
+1. Clone the repo:
 
-If you are using Next you can also hard-code json and return it from API routes created in `pages/api/*`.
+```bash
+git clone https://github.com/stian-git/js-framework-ca.git
+```
 
-You can use your own Wordpress or Strapi or any other API that you have created for these calls but it must be publically hosted - it must not be running on your localhost.
+2. Install the dependencies:
 
-Display at least 2 properties from each result.
+```
+npm install
+```
 
-Each result should link to the detail page, passing a parameter in the URL.
+### Configuration
 
-### Detail
+Keys below for production environments should be added to the file: .env.production, otherwise: .env.development
 
-Retrieve the parameter from the URL and use it in an API call to fetch one item.
+1. Retrieve API access
 
-Display at least 3 properties from the item.
+You need an API key to access the games data.
+Register an account on [https://rawg.io/](https://rawg.io/) and add the API key to: "REACT_APP_GAME_KEY".
 
-### Contact
+2. Smtp.JS Secure Token
 
-Create a form with the following inputs and validation:
+The Smtp.js token is needed to encrypt your SMTP credentials.
+Just visit [https://smtpjs.com](https://smtpjs.com) and click the "Encrypt your SMTP Credentials" to open the form that needs to be filled out to retrieve the token. Add the token to the key: "REACT_APP_SMTP_TOKEN"
 
--   First name - required, minimum 3 characters
--   Last name - required, minimum 4 characters
--   Email - required, must be in a valid email format
--   Subject - required, this must be a select box with at least 2 options
--   Message - required, minimum 10 characters.
+3. Wordpress Authentication
 
-### Login
+You need your own Wordpress installation to administer your users. Perform a default installation, but add the following plugin: [https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/](JWT Authentication for WP REST API).
+Add the URL to the base of your Wordpress API to the key: "REACT_APP_WP_BASE_URL".
+Example: REACT_APP_WP_BASE_URL="https://your.domain.com/wordpress/wp-json/"
 
-Create a form with username/email and password fields. The inputs should have the necessary validation for a login form (not a registration form).
+### Running
 
-The form should make a login request to either a Wordpress API with the JWT plugin installed or a Strapi API. If the login is successful redirect the user to the admin route.
+To run the app, run the following commands after you have followed the installation instructions above:
 
-If the login is unsuccessful display a message above the form.
+```bash
+npm run start
+```
 
-### Admin
+## Contributing
 
-This page will simply display an "Admin" heading.
+This was made for a school project so I'm not planning for regular maintenance, but rather use it to show some of my work.
+However I will welcome feedback, suggestions and ideas. Please reach me through the contact information below.
 
----
+## Contact
 
-## Level 2
+The best way to reach me would be through the following sites:
 
-Add a favourite button/icon component to each result on your home page. Clicking this button will toggle the result in/out of a favourites array.
+[My Portfolio](https://tekniskpotet.no)
 
-Add a "/favourites" path to your routes. This page will display all the items currently in the favourites array.
+[My LinkedIn page](https://www.linkedin.com/in/stian-martinsen-stormyr-1662a515/)
